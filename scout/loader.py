@@ -13,12 +13,15 @@ def load_export(path: str):
     else:
         raise ValueError("Path did not have .csv or .html")
     
-METADATA_COLS = ["Name", "Club", "Position", "Age", "Transfer Value", "Salary", "Aer", "Cmd",
-                 "Com", "Ecc", "Han", "Thr", "TRO", "Kic", "Ref", "1v1", "Agg", "Ant", "Bra",
-                 "Cmp", "Det", "OtB", "Pos", "Tea", "Pac", "Tec", "Sta", "Str", "Cor", "Tck",
-                 "Pen", "Fin", "LTh", "Hea", "Fir", "Dri", "Vis", "Cro", "Acc", "Agi", "Bal",
-                 "Nat", "Jum", "Wor", "Fla", "Ldr", "Fre", "Dec", "Mar", "Lon", "Pas", "Cnt",
-                 "Pun"]
+METADATA_COLS = ["Inf", "RF Matches", "Name", "Club", "Position", "Transfer Value", "Salary",
+                 "Rec", "Knowledge"]
 
 def clean(df):
     """Normalizing the raw export"""
+    stripped_cols = [col.strip() for col in df]
+    df.columns = stripped_cols
+    df = df.drop(columns = ['Inf', 'RF Matches', "Rec", 'Knowledge'], errors= 'ignore')
+    attr_cols = [col for col in df.columns if col not in METADATA_COLS]
+    for col in attr_cols:
+        df[col] = pd.to_numeric(df[col], errors='coerce')
+    return df
