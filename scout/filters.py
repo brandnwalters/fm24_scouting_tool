@@ -1,5 +1,3 @@
-from loader import load_export, clean
-
 def filter_players(df, max_age=None, position=None, max_value= None, min_attrs=None):
     """Returning the subset of the df matching all criteria"""
     if max_age is not None:

@@ -17,19 +17,19 @@ ROLES = {
 
      "deep_lying_playmaker": {
 
-        "Passing": 3, "Vision": 3, "Composure": 3, "First Touch": 3,
+        "Pas": 3, "Vis": 3, "Cmp": 3, "Fir": 3,
 
-        "Decisions": 2, "Technique": 2, "Anticipation": 2,
+        "Dec": 2, "Tec": 2, "Ant": 2,
 
-        "Teamwork": 1, "Stamina": 1,},
+        "Tea": 1, "Sta": 1,},
 
     "ball_winning_midfielder": {
 
-        "Tackling": 3, "Aggression": 3, "Work Rate": 3, "Stamina": 3,
+        "Tck": 3, "Agg": 3, "Wor": 3, "Sta": 3,
 
-        "Anticipation": 2, "Positioning": 2, "Teamwork": 2,
+        "Ant": 2, "Pos": 2, "Tea": 2,
 
-        "Strength": 1, "Passing": 1,
+        "Str": 1, "Pas": 1,
 
     }
 }
