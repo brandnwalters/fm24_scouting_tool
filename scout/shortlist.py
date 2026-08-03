@@ -18,8 +18,8 @@ def explain(player_row, role_weights):
         value = player_row[attr]        
         contribution = value * weight
         contributions.append((attr, value, weight, contribution))
-        
+
     contributions.sort(key=lambda row: row[3], reverse=True)
 
     for attr, value, weight, contribution in contributions:
-        print(f"{attr:<15} {value:>4} × {weight}  =  {contribution:>5}")
+        print(f"{attr:<15} {value:>4} * {weight}  =  {contribution:>5}")
