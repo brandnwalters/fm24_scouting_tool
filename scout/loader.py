@@ -1,8 +1,11 @@
 import pandas as pd
 
-def load_export(path: str):
-    """Loading an FM export into a dataframe"""
-    lower_path = path.lower()
+def load_export(path):
+    """Loading an FM export into a dataframe. Accepts a path string or a
+    file-like object (e.g. Streamlit's UploadedFile), which exposes .name
+    instead of being a string itself."""
+    name = path if isinstance(path, str) else path.name
+    lower_path = name.lower()
     if lower_path.endswith('.csv'):
         df = pd.read_csv(filepath_or_buffer= path, sep = ";")
         return df
